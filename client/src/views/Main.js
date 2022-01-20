@@ -12,8 +12,8 @@ const Main = (props) => {
     useEffect(() => {
         
         axios.get('http://localhost:8000/api/products')
-            .then(response => {
-                setProducts(response.data);
+            .then(res => {
+                setProducts(res.data);
                 setLoaded(true);
             })
             .catch(error => console.log(error));

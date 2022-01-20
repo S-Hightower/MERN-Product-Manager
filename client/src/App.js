@@ -3,8 +3,7 @@ import './App.css';
 
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 
-import Form from './components/Form';
-import ProductDisplay from './components/ProductDisplay';
+import Main from './views/Main';
 
 function App() {
   return (
@@ -12,12 +11,12 @@ function App() {
       <Switch>
 
         <Route exact path="/">
-          <Form />
+          <Main />
         </Route>
-
+{/* 
         <Route exact path="/api/products">
-          <ProductDisplay />
-        </Route>
+          <ProductDetails />
+        </Route> */}
 
       </Switch>
     </div>
