@@ -14,6 +14,10 @@ function App() {
             <Form />
           </Route>
           
+          {/* <Route exact path="/api/products">
+            <ProductDisplay/>
+          </Route> */}
+
         </Switch>
       </BrowserRouter>
     </div>

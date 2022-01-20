@@ -29,7 +29,7 @@ const Form = (props) => {
                     <input type="text" placeholder="Description" className="form-control" onChange={e => setDescription(e.target.value)} value={description}/>
                 </div>
                 <div className="mt-3">
-                    <button className="btn btn-lg btn btn-info">Add Product</button>
+                    <button type="submit" className="btn btn-lg btn btn-info">Add Product</button>
                 </div>
             </form>
         </div>//container
