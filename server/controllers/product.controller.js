@@ -12,7 +12,7 @@ module.exports.findAllProducts = (req, res) => {
 //Read One
 module.exports.findOneProduct = (req, res) => {
     Product.findById({_id: req.params.id})
-        .then(oneProduct => res.json({products: oneProduct}))
+        .then(oneProduct => res.json({product: oneProduct}))
         .catch(err => res.json({message: "Something went wrong", error: err}));
 };
 

@@ -11,7 +11,7 @@ const Detail = (props) => {
         axios.get(`http://localhost:8000/api/products/${id}`)
             .then(res => {
                 setProduct(res.data);
-                console.log(res.data.products)})
+                console.log(res.data.product)})
             .catch(error => console.log(error));
     }, [id]);
 
@@ -23,7 +23,7 @@ const Detail = (props) => {
             <h1>Product: {product.title}</h1>
             <h3>Price: {product.price}</h3>
             <h3>Description: {product.description}</h3>
-        </div>
+        </div>//container
     );
 };
 
