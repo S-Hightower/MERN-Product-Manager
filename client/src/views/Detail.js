@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 
 const Detail = (props) => {
 
-    const[product, setProduct] = useState({});
+    const[product, setProduct] = useState("");
     const {id} = useParams();
 
     useEffect(() => {
