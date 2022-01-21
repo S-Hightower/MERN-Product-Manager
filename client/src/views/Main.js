@@ -15,6 +15,7 @@ const Main = (props) => {
             .then(res => {
                 setProducts(res.data);
                 setLoaded(true);
+                console.log(res.data);
             })
             .catch(error => console.log(error));
     }, []);

@@ -7,7 +7,7 @@ const ProductDisplay = props => {
         <div className="container-sm mt-3 mb-5">
             <h1>All Products</h1>
             <div>
-                {props.products.map((product, index) => {
+                {props.products.products.map((product, index) => {
                     return (<div key={index}>
                         <Link to={`/` + product._id}>
                             {product.title}
