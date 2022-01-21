@@ -20,7 +20,11 @@ const Update = (props) => {
 
     const Update = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8000/api/products/${id}/edit`)
+        axios.put(`http://localhost:8000/api/products/${id}/edit`, {
+            title,
+            price,
+            description
+        })
             .then(res => console.log(res))
             .catch(err => console.log(err));
         history.push('/');
