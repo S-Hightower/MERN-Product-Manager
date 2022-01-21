@@ -9,7 +9,7 @@ const ProductDisplay = props => {
             <div>
                 {props.products.products.map((product, index) => {
                     return (<div key={index}>
-                        <Link to={`/` + product._id}>
+                        <Link to={`/api/products/` + product._id}>
                             {product.title}
                         </Link>
                     </div>)
