@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 
 const Detail = (props) => {
 
@@ -15,6 +15,12 @@ const Detail = (props) => {
             .catch(error => console.log(error));
     }, [id]);
 
+    const deleteProduct = id => {
+        axios.delete(`http://localhost:8000/api/products/${id}`)
+            .then(res => id)
+            .catch(error => console.log(error));
+    };
+
     return (
         product.error ?
         <h1>{product.error}</h1> :
@@ -25,6 +31,12 @@ const Detail = (props) => {
             <h1>Product: {product.title}</h1>
             <h3>Price: {product.price}</h3>
             <h3>Description: {product.description}</h3>
+            <div className="text-end mb-3">
+                <Link to = {'/api/products/' + product._id + '/edit'}>Edit Product</Link>
+            </div>
+            <div className="text-end mb-3">
+                <button onClick={e => {deleteProduct(product._id)}} className="btn btn-outline-danger">Delete Product</button>
+            </div>
         </div>//container
     );
 };
