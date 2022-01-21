@@ -25,14 +25,14 @@ module.exports.createProduct = (req, res) => {
 
 //Update
 module.exports.updateProduct = (req, res) => {
-    Product.updateOne(req.params.id, req.body)
-        .then(updatedProduct => res.json(updatedProduct))
+    Product.findOneAndUpdate({_id:req.params.id}, req.body, {new: true})
+        .then(result => res.json(updatedProduct))
         .catch(err => res.json({message: "Something went wrong", error: err}));
 };
 
 //Delete
 module.exports.deleteProduct = (req, res) => {
-    Product.deleteOne(req.params.id)
-    .then(deletedProduct => res.json(deletedProduct))
+    Product.deleteOne({_id: req.params.id})
+    .then(result => res.json(deletedProduct))
     .catch(err => res.json({message: "Something went wrong", error: err}));
 };

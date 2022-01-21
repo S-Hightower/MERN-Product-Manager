@@ -19,6 +19,7 @@ const Detail = (props) => {
         axios.delete(`http://localhost:8000/api/products/${id}`)
             .then(res => id)
             .catch(error => console.log(error));
+
     };
 
     return (
