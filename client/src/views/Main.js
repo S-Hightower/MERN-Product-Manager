@@ -10,7 +10,6 @@ const Main = (props) => {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        
         axios.get('http://localhost:8000/api/products')
             .then(res => {
                 setProducts(res.data);
