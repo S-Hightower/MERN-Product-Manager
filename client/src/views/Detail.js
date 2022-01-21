@@ -16,8 +16,10 @@ const Detail = (props) => {
     }, [id]);
 
     return (
+        product.error ?
+        <h1>{product.error}</h1> :
         <div className="container-sm mt-3 mb-5">
-            <div className="mb-3">
+            <div className="text-end mb-3">
                 <Link to = {'/'}>Back to Main Page</Link>
             </div>
             <h1>Product: {product.title}</h1>
